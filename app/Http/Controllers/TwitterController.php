@@ -26,20 +26,24 @@ class TwitterController extends Controller
       
                 Auth::login($userWhere);
      
-                return redirect('/home');
+                return redirect('/dashboard');
       
-            }else{
-                $gitUser = User::create([
+	    }else{
+		if(!$user->email){
+		    $user->email =  "example_".rand()."@example.com";
+		}
+
+                $twitUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
                     'twitter_id'=> $user->id,
                     'oauth_type'=> 'twitter',
-                    'password' => encrypt('admin595959')
+                    'password' => encrypt('supersecret')
                 ]);
      
-                Auth::login($gitUser);
+                Auth::login($twitUser);
       
-                return redirect('/home');
+                return redirect('/dashboard');
             }
      
         } catch (Exception $e) {
