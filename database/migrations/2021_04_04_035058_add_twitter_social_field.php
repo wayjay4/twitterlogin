@@ -16,6 +16,7 @@ class AddTwitterSocialField extends Migration
         Schema::table('users', function($table){
             $table->string('twitter_id')->nullable();
             $table->string('oauth_type')->nullable();
+            $table->text('twitter_avatar')->nullable();
         });
     }
 
@@ -28,7 +29,8 @@ class AddTwitterSocialField extends Migration
     {
         Schema::table('users', function($table){
             $table->dropColumn('twitter_id');
-            $table->dripColumn('oauth_type');
+            $table->dropColumn('oauth_type');
+            $table->dropColumn('twitter_avatar');
         });
     }
 }

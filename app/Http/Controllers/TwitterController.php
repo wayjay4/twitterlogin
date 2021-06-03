@@ -34,7 +34,7 @@ class TwitterController extends Controller
                     'email' => $user->email,
                     'twitter_id' => $user->id,
                     'oauth_type' => 'twitter',
-                    'profile_photo_path' => $user->avatar,
+                    'twitter_avatar' => $user->avatar,
                     'password' => encrypt('supersecret')
                 ]);
      
