@@ -25,3 +25,7 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('auth/twitter', [TwitterController::class, 'loginwithTwitter']);
 
 Route::get('auth/callback/twitter', [TwitterController::class, 'cbTwitter']);
+
+Route::get('terms_of_service', [TwitterController::class, 'tosTwitter']);
+
+Route::get('privacy_policy', [TwitterController::class, 'ppTwitter']);

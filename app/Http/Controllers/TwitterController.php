@@ -50,4 +50,14 @@ class TwitterController extends Controller
             dd($e->getMessage());
         }
     }
+
+    public function tosTwitter()
+    {
+        return view('terms');
+    }
+
+    public function ppTwitter()
+    {
+        return view('policy');
+    }
 }
