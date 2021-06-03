@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Auth;
 use Exception;
 use Socialite;
-use App\Models\Users;
+use App\Models\User;
 
 class FacebookController extends Controller
 {
