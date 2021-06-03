@@ -27,17 +27,14 @@ class TwitterController extends Controller
                 Auth::login($userWhere);
      
                 return redirect('/dashboard');
-      
-	    }else{
-		if(!$user->email){
-		    $user->email =  "example_".rand()."@example.com";
-		}
+            }else{
 
                 $twitUser = User::create([
                     'name' => $user->name,
                     'email' => $user->email,
-                    'twitter_id'=> $user->id,
-                    'oauth_type'=> 'twitter',
+                    'twitter_id' => $user->id,
+                    'oauth_type' => 'twitter',
+                    'profile_photo_path' => $user->avatar,
                     'password' => encrypt('supersecret')
                 ]);
      
