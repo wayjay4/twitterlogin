@@ -15,6 +15,7 @@ class AddFacebookSocialField extends Migration
     {
         Schema::table('users', function (Blueprint $table){
             $table->string('facebook_id')->nullable();
+            $table->string('facebook_avatar')->nullable();
         });
     }
 
@@ -27,6 +28,7 @@ class AddFacebookSocialField extends Migration
     {
         Schema::table('users', function(Blueprint $table){
             $table->dropColumn('facebook_id');
+            $table->dropColumn('facebook_avatar');
         });
     }
 }
