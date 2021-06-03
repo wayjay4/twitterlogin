@@ -43,7 +43,7 @@
                     {{ __('Log in') }}
                 </x-jet-button>
             </div>
-            
+
             {{-- Laravel Login with Twitter login --}}
             <div class="flex items-center justify-end mt-4">
                 <a 
@@ -51,6 +51,16 @@
                     style="background: #1E9DEA; padding: 10px; width: 100%; text-align: center; display: block; border-radius:4px; color: #ffffff;"
                 >
                     Login with Twitter
+                </a>
+            </div>
+            
+            {{-- Laravel Login with Facebook login --}}
+            <div class="flex items-center justify-end mt-4">
+                <a 
+                    class="btn" href="{{ url('auth/facebook') }}"
+                    style="background: #3B5499; padding: 10px; width: 100%; text-align: center; display: block; border-radius:3px; color: #ffffff;"
+                >
+                    Login with Facebook
                 </a>
             </div>
         </form>
